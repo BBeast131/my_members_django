@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>Member Details</h1>
-    <p>First Name : {{member.firstname}}</p>
-    <p>Last Name : {{member.lastname}}</p>
-    <p>Phone Number : {{member.phone}}</p>
-    <p>Joined Date : {{member.joined_date}}</p>
-    <a href="/members">Back to Members</a>
-  </body>
-</html>
+{% extends "master.html" %}
+
+{% block title %} Details of {{ member.firstname}} {{member.lastname}}
+{% endblock %}
+
+{% block content %}
+  <h1>{{member.firstname}}{{member.lastname}}</h1>
+  <p>Phone : {{member.phone}}</p>
+  <p>Member since : {{member.joined_date}}</p>
+  <a href="/members">Back to Members</a>
+{% endblock %}
