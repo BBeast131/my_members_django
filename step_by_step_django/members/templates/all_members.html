@@ -1,16 +1,16 @@
 {% extends "master.html" %}
 
-{% block title %} My club - List of members
+{% block title %}
+  My Tennis Club - List of all members
 {% endblock %}
 
 {% block content %}
-  <h1> All members </h1>
-  <p><a href="/">HOME</a></p>
-  <ul>
-    {% for member in mymembers %}
-      <li><a href="details/{{member.id}}"> {{ member.firstname }} {{" "}}{{ member.lastname }} </a></li>
-    {% empty %} 
-      <li> No members </li>  
-    {% endfor %}
-  </ul>
-{% endblock %}
+  <div class="mycard">
+    <h1>Members</h1>
+    <ul>
+      {% for x in mymembers %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %} 
