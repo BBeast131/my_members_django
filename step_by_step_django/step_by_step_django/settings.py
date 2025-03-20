@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'step_by_step_django.urls'
@@ -115,8 +116,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+# 
+# 
+# 
+
+#  For suing static files in project
+
+STATIC_ROOT = BASE_DIR / "staticfiles" 
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+   BASE_DIR / "mystaticfiles",  # Only needed if you have a global static folder
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
