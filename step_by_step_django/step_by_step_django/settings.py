@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'step_by_step_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER' : 'bbeast131',
+        'PASSWORD' : 'dkrgjwdkr',
+        'HOST' : '127.0.0.1',
+        'PORT' : '5432',
     }
 }
 
@@ -126,9 +130,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-   BASE_DIR / "mystaticfiles",  # Only needed if you have a global static folder
-]
+
+# STATICFILES_DIRS = [
+#    BASE_DIR / "mystaticfiles",  # Only needed if you have a global static folder
+# ]
 
 
 # Default primary key field type
